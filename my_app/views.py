@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Post
 # Create your views here.
 
 #MVC - Django
@@ -17,3 +18,15 @@ def home(request):
 
 def home_param(request, post_id):
     return HttpResponse('Olá mundo!! %s' % post_id)
+
+def post_list(request):
+    #name = 'Vitor'
+    #return render(request, 'post_list.html', {'name': 'name'})
+    posts = Post.objects.all()
+    return render(request, 'post_list.html', {'posts': posts})
+
+def post_show(request, post_id):
+    #name = 'Vitor'
+    #return render(request, 'post_list.html', {'name': 'name'})
+    post = Post.objects.get(id=post_id)
+    return render(request, 'post_show.html', {'post': post})
