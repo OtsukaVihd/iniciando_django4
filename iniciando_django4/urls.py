@@ -24,5 +24,6 @@ urlpatterns = [
     #path('posts/', views.home),
     #path('posts/<str:post_id>', views.home_param)
     path('posts/', views.post_list, name='post_list'),
-    path('posts/<int:post_id>', views.post_show, name='post_show')
+    path('posts/<int:post_id>', views.post_show, name='post_show'),
+    path('login/', views.login)
 ]

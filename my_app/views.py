@@ -40,3 +40,6 @@ def post_show(request, post_id):
         'post': post,
         'categories': categories
     })
+
+def login(req):
+    return render(req, 'my_app/login.html')
